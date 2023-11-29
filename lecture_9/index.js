@@ -1,17 +1,5 @@
 // today we compelete the Expanse
 
-// string methods in javascript
-// 1 - string.lenght
-// 2 -string.upperCase()
-// 3 -string.lowerCase()
-// 4 - string.charAt(index)
-// 5 - string.indexOf('value')
-// 6 - string.subString(start , end)
-// 7 - string.trim();
-// 8 - string.replace(searchItem , replaceItem);
-// 9 - string.includes("value");
-// 10 - string.spilit(" ")
-
 let Expnase = [];
 console.log(Expnase);
 const addExpanse = ({ id, name, rate }) => {
@@ -50,6 +38,28 @@ editExpanse(2, {
 
 console.log(Expnase);
 
+const serarchItem = (Search) => {
+  let search = Expnase.filter((items) => {
+    return items.name === Search || items.rate === Search;
+  });
+  return search;
+};
+
+console.log(serarchItem("orange"));
+console.log(serarchItem(50));
+
+const totalExpanse = () => {
+  let sum = 0;
+  Expnase.forEach((items) => {
+    sum += items.rate; // 0 + 60 = 60 + 40 = 100 + 50 = 150
+  });
+
+  return sum;
+};
+
+console.log(`the sum of total expanse is  : `, totalExpanse());
+
+//print array values
 const data = () => {
   Expnase.map((items) => {
     console.log(items.name);
